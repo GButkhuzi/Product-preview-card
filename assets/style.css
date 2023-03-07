@@ -10,6 +10,7 @@ html {
     height: 100%;
 }
 
+
 body {
     display: flex;
     justify-content: center;
@@ -18,34 +19,23 @@ body {
 }
 
 .container {
-    width: 600px;
-    height: 450px;
+    width: 100%;
+    max-width: 347px;
     background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     border-radius: 10px;
     overflow: hidden;
 }
 
-.image-section {
-    overflow: hidden;
+.image-conteiner img {
+    width: 100%;
 }
 
-.image-section {
-    min-width: 300px;
-    min-height: 450px;
-    background-image: url('./images/image-product-desktop.jpg');
-    background-position: center;
-    background-size: cover;
-}
 
 .text-section {
-    max-width: 268px;
-    max-height: 450px;
-    margin: 32px;
+    margin: 24px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
 section>h3 {
@@ -59,9 +49,7 @@ section>h3 {
     text-transform: uppercase;
 }
 
-
 section>h1 {
-    margin: 20px 0px 24px 0px;
     font-family: 'Fraunces';
     font-style: normal;
     font-weight: 700;
@@ -72,7 +60,6 @@ section>h1 {
 
 
 section>p {
-    margin-bottom: 29px;
     font-family: 'Montserrat';
     font-style: normal;
     font-weight: 500;
@@ -81,11 +68,11 @@ section>p {
     color: #6C7289;
 }
 
-
-section>div {
+.price {
     display: flex;
-    align-items: center;
+    justify-content: flex-start;
     gap: 19px;
+    align-items: center;
 }
 
 .price>:first-child {
@@ -108,11 +95,8 @@ section>div {
 }
 
 .button {
-    margin-top: 30px;
-    padding: 15px;
     display: flex;
     justify-content: center;
-    align-items: center;
     background: #3D8168;
     border-radius: 8px;
 
@@ -121,11 +105,47 @@ section>div {
     font-weight: 700;
     font-size: 14px;
     line-height: 17px;
-    color: white;
+    color: #FFFFFF;
+
+    padding: 16px;
+    gap: 12px;
+
     cursor: pointer;
 }
 
 .button:hover {
-    background-color: #1A4032;
+    background: #1A4032;
     transition: 0.3s ease-in-out;
+}
+
+
+
+@media only screen and (min-width:375px) {
+
+    .container {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+
+    }
+
+    .image-conteiner>:first-child {
+        visibility: hidden;
+    }
+
+    .image-conteiner {
+        background-image: url('./images/image-product-desktop.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .text-section {
+        margin: 32px;
+        max-width: 240px;
+
+    }
+
+
+
 }
